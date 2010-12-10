@@ -21,13 +21,7 @@
     var debugMode = true;
     $.fn.extend({
         accessibleLongdescShow: function(){
-            var url = $(this).attr('longdesc')+'2';
-            $(this).parent().
-            append('<div class="desc"/>')
-            .find('.desc').load(url,function(){
-                $(this).css('backgroundImage','none')
-                .prepend('<button><span></span></button>');
-            });
+
         },
         accessibleLongdesc: function(config) {
             debug('init');
@@ -53,7 +47,23 @@
                     $(this).toggleClass('hover');
                 })
                 .click(function(){
-                    el.accessibleLongdescShow();
+                    debug('click open');
+                    var url = el.attr('longdesc');
+                    url = url.replace("#", " #");
+                    el.parent().
+                    append('<div class="desc"/>')
+                    .find('.desc').load(url,function(){
+                        var desc = $(this)
+                        .css('backgroundImage','none')
+                        .prepend('<button><span>'+o.options.closeText+'</span></button>')
+                        .find('button')
+                        .click(function(){
+                            debug('click close');
+                            debug(desc);
+                            desc.remove();
+                        })
+                        .end();
+                    });
                 });
             });
         }
