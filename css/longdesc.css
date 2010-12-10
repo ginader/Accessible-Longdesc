@@ -1,0 +1,46 @@
+.accessible-longdesc{
+    position:relative;
+}
+.accessible-longdesc button{
+    overflow:hidden;
+    display: block;
+    height:16px;
+    zoom:1;
+    border:none;
+    float:right;
+    position:absolute;
+    bottom:0;
+    right:0;
+    cursor:pointer;
+    padding:0;
+    background-color:transparent;
+}
+.accessible-longdesc button .text{
+    display: block;
+    float:left;
+    overflow: hidden;
+    width: 0px;
+    /*visibility:hidden;*/
+    zoom:1;
+}
+.accessible-longdesc button.hover .text{
+    width:auto;
+}
+.accessible-longdesc button .icon{
+    display: block;
+    float:left;
+    width: 16px;
+    height:16px;
+    zoom:1;
+}
+.accessible-longdesc .desc{
+    width:100%;
+    height:100%;
+    background-color:#fff;
+    position:absolute;
+    top:0;
+    left:0;
+    background-image:url(spinner.gif);
+    background-repeat:no-repeat;
+    background-position:center;
+}
