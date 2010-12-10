@@ -17,18 +17,18 @@
     <div class="section" id="longdesc">
         <h3>The <code class="markup">longdesc</code> attribute</h3>
         <div style="border: 2px solid black; padding: 5px;">
-            <div class="mediaobject"><img src="graph.jpg" class="border" width="510" height="348" alt="Graph of percentage of total U.S. noninsitutionalized population age 16-64 declaring one or more disabilities" longdesc="description.html#the-description"></div>
+            <div class="mediaobject"><img src="graph.png" class="border" width="510" height="348" alt="Graph of percentage of total U.S. noninsitutionalized population age 16-64 declaring one or more disabilities" longdesc="description.html#the-description"></div>
         </div>
         <p>The <code class="markup">longdesc</code> attribute, which can be added to an <code class="markup">&lt;img&gt;</code> tag, does nothing more than provide access to the separate page where a long description is available. The <code class="markup">longdesc</code> value must be the URL of the long description page. It should <strong>NOT</strong> contain the long description text itself. A <code class="markup">longdesc</code> works in the same way as the previous example, except that the link is typically not visible to sighted readers. The following example is the same graph with a <code class="markup">longdesc</code> attribute added:</p>
         <div style="border: 2px solid black; padding: 5px;">
-            <div class="mediaobject"><img src="graph.jpg" class="border" width="510" height="348" alt="Graph of percentage of total U.S. noninsitutionalized population age 16-64 declaring one or more disabilities" longdesc="description.html"></div>
+            <div class="mediaobject"><img src="graph.png" class="border" width="510" height="348" alt="Graph of percentage of total U.S. noninsitutionalized population age 16-64 declaring one or more disabilities" longdesc="description.html"></div>
         </div>
         <p>While modern screen readers provide good support for <code class="markup">longdesc</code>, a problem arrises in using <code class="markup">longdesc</code> exclusively - browsers do not currently provide any visual indication that the image references a long description page. Many browsers do provide this information in the image details or context menu, but this is not readily apparent. The <code class="markup">longdesc</code> approach is a technique recommended in both the <a href="/standards/wcag/checklist">Web Content Accessibility Guidelines</a> and the <a href="/standards/508/checklist">Section 508 guidelines</a>. It would have much better utility if modern browsers and other assistive technologies provided a more apparent method of identifying and accessing long description pages. <strong>Because the long description page is useful to all users, if longdesc is used, it should be used in conjunction with a standard link to the long description page (method #2 above).</strong></p>
         <p>Here is the markup for the <code class="markup">longdesc</code> attribute:</p>
         <div class="programlisting">
-        <code class="markup">&lt;img src="graph.jpg" width="526" height="353" alt="Graph of percentage of total U.S. noninsitutionalized population age 16-64 declaring one or more disabilities" longdesc="description.htm"&gt;</code>
+        <code class="markup">&lt;img src="graph.png" width="526" height="353" alt="Graph of percentage of total U.S. noninsitutionalized population age 16-64 declaring one or more disabilities" longdesc="description.htm"&gt;</code>
         <div style="border: 2px solid black; padding: 5px;">
-            <div class="mediaobject"><img src="graph.jpg" class="border" width="510" height="348" alt="Graph of percentage of total U.S. noninsitutionalized population age 16-64 declaring one or more disabilities"></div>
+            <div class="mediaobject"><img src="graph.png" class="border" width="510" height="348" alt="Graph of percentage of total U.S. noninsitutionalized population age 16-64 declaring one or more disabilities"></div>
         </div>
         </div>
     </div>

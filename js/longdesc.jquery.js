@@ -18,7 +18,7 @@
 
 
 (function($) {
-    var debugMode = true;
+    var debugMode = false;
     $.fn.extend({
         accessibleLongdescShow: function(){
 
@@ -41,7 +41,7 @@
                 el
                 .wrap('<div class="'+o.options.wrapperClass+'"></div>')
                 .parent()
-                .append('<button><span class="text">'+o.options.infoText+'</span><span class="icon">'+o.options.infoIcon+'</span></button>')
+                .append('<button><span class="icon">'+o.options.infoIcon+'</span><span class="text">'+o.options.infoText+'</span></button>')
                 .find('button')
                 .bind('mouseenter mouseleave focusin focusout',function(){
                     $(this).toggleClass('hover');
@@ -51,18 +51,22 @@
                     var url = el.attr('longdesc');
                     url = url.replace("#", " #");
                     el.parent().
-                    append('<div class="desc"/>')
-                    .find('.desc').load(url,function(){
-                        var desc = $(this)
+                    append('<div class="desc" tabindex="-1"><div class="desc-content"></div></div>')
+                    .find('.desc-content').load(url,function(){
+                        var desc = $(this).parent();
+                        desc
                         .css('backgroundImage','none')
                         .prepend('<button><span>'+o.options.closeText+'</span></button>')
                         .find('button')
                         .click(function(){
                             debug('click close');
-                            debug(desc);
+                            var button = el.parent().children('button');
+                            debug(button);
+                            button.focus();
                             desc.remove();
                         })
-                        .end();
+                        .end()
+                        .focus();
                     });
                 });
             });
